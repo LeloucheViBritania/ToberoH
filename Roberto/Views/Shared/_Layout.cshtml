@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Roberto - Hotel &amp; Resort HTML Template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="~/Content/img/core-img/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    @*@Styles.Render("~/Content/css")*@
+    @Styles.Render("~/Template/css")@*
+        @Scripts.Render("~/bundles/modernizr")*@
+
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- /Preloader -->
+    @Html.Partial("NavBar")
+
+    @RenderBody()
+
+    @Html.Partial("Footer")
+
+
+    @Scripts.Render("~/Template/js")
+</body>
+</html>

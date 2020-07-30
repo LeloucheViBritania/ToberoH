@@ -1,0 +1,82 @@
+﻿@model Roberto.Models.BedRoom
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="font-weight:bold; color:midnightblue; text-align:center;font-size:45px">Ajouter une chambre a votre liste</h2>
+
+<form method="post" style="margin:50px;">
+    <div class="row">
+        <div class="col">
+            <label style="font-weight:bold; color:black; font-size:22px">Le nom de la chambre</label>
+            <input type="text" class="form-control" name="NameBedRoom" id="NameBedRoom">
+        </div>
+        <div class="col">
+            <label style="font-weight:bold; color:black; font-size:22px">la taille de la chambre</label>
+            <input type="text" class="form-control" placeholder="Entrer le chiffre uniquement" name="Size" id="Size">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label style="font-weight:bold; color:black; font-size:22px">Le prix de la chambre</label>
+            <input type="text" class="form-control" placeholder="Entrer le chiffre uniquement" name="PriceBedRoom" id="PriceBedRoom">
+        </div>
+        <div class="col">
+            <label style="font-weight:bold; color:black; font-size:22px">Disponibilté</label>
+            <input type="text" class="form-control" placeholder="Entrer 1 pour OUI  ou 0 pour NON" name="Disponible" id="Disponible">
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col">
+            <label style="font-weight:bold; color:black; font-size:22px">Le nombre d'adultes</label>
+            <input type="text" class="form-control" placeholder="Entrer le chiffre uniquement" name="NumberAdult" id="NumberAdult">
+        </div>
+        <div class="col">
+            <label style="font-weight:bold; color:black; font-size:22px">Le nombre d'enfants</label>
+            <input type="text" class="form-control" placeholder="Entrer le chiffre uniquement" name="NumberChild" id="NumberChild">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label style="font-weight:bold; color:black; font-size:22px">Le nombre de personne contenant</label>
+            <input type="text" class="form-control" placeholder="Entrer le chiffre uniquement" name="Capacité_Chambre" id="Capacité_Chambre">
+        </div>
+        <div class="col">
+            <label style="font-weight:bold; color:black; font-size:22px">La forme du lit</label>
+            <input type="text" class="form-control" placeholder="" name="FormeLit" id="FormeLit">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label style="font-weight:bold; color:black; font-size:22px">Services</label>
+            <input type="text" class="form-control" placeholder="Enumerez les services" name="Service" id="Service">
+        </div>
+        <div class="col">
+            <label style="font-weight:bold; color:black; font-size:22px">Date de disponilité</label>
+            <input type="text" class="form-control" placeholder="Ex: 12/04/2020" name="Date_Disponible" id="Date_Disponible">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label style="font-weight:bold; color:black; font-size:22px">Description</label>
+            <textarea class="form-control" id="Description" name="Description" rows="3"></textarea>
+        </div>
+        <div class="col">
+            <label style="font-weight:bold; color:black; font-size:22px">Image de la chambre</label>
+            <input type="text" class="form-control" placeholder="Content/img/bg-img/(nom image).jpg" name="Images" id="Images">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label style="font-weight:bold; color:black; font-size:22px">Note de la chambre</label>
+            <input type="text" class="form-control" placeholder="" name="Note" id="Note">
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </div>
+    </div>
+</form>
+<p>@ViewBag.Succes</p>

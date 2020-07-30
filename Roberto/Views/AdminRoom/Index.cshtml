@@ -1,0 +1,88 @@
+﻿<div class="breadcrumb-area bg-img bg-overlay jarallax" style=" background-image: url(~/Content/img/bg-img/16.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcrumb-content text-center">
+                    <h2 class="page-title">Admin Room</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            @Html.ActionLink("Dashboard /", "Dashboar", "Dashboar")
+                            <li class="breadcrumb-item active" aria-current="page">Admin Room</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-10 col-lg-2" style=" background-color:lightcyan">
+    <div style=" margin-bottom: 100px">
+        <h3 style="color:mediumaquamarine">Partie Administrateur</h3>
+        <p style="font-size:17px;">Vous pouvez ajouter le nombre de chmabres que vous desiriez mais uniquement celles disponibles !!</p>
+    </div>
+
+    <div style="background-color:mediumaquamarine; text-align:center">
+        <p>
+            @Html.ActionLink("Ajouter une chambre", "Create")
+        </p>
+    </div>
+
+</div>
+@foreach (var data in ViewBag.listchambre)
+{
+
+    <!-- Rooms Area Start -->
+    <div class="roberto-rooms-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <!-- Single Room Area -->
+
+                    <div class="single-room-area d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="100ms">
+                        <!-- Room Thumbnail -->
+                        <div class="room-thumbnail">
+                            <img src="@data.Ïmage.NameImg" alt="">
+                        </div>
+                        <!-- Room Content -->
+                        <div class="room-content">
+                            <h2>@data.NameBedRoom</h2>
+                            <h4>@data.PiceBedRoom $ <span>/ Day</span></h4>
+                            <div class="room-feature">
+                                <h6>Size: <span>@data.SizeBedRoom ft</span></h6>
+                                <h6>Capacity: <span>Max persion @data.Capacité_Chambre</span></h6>
+                                @* <h6>Bed: <span>@data.FormeLit</span></h6>*@
+                                <h6>Services: <span>@data.Service</span></h6>
+                            </div>
+                            @Html.ActionLink("View Details ", "Details", new { id = @data.BedRoomId });
+                        </div>
+                    </div>
+
+
+
+
+                    <!--<p>
+                        Html.PagedListPager(Model, page => Url.Action("Rooms", new { page = page }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
+                    </p>-->
+                </div>
+
+
+                <!-- Hotel Reservation Area -->
+                <div class="col-10 col-lg-4" style=" border-radius:7px; background-color:lightcyan">
+                    <div style=" margin-bottom: 100px">
+                        <h3 style="color:mediumaquamarine">Partie Administrateur</h3>
+                        <p style="font-size:17px;">Vous pouvez modifier les éléments de la chambre ou supprimer la chambre</p>
+                    </div>
+
+                    <div style="background-color:mediumaquamarine; text-align:center">
+                        <p>
+                            @Html.ActionLink("Modifer", "Modif", new { id = @data.BedRoomId }) |
+                            @Html.ActionLink("Supprimer", "Details", new { id = @data.BedRoomId })
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
